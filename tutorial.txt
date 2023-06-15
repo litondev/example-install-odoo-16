@@ -1,0 +1,46 @@
+INGAT HANYA UNTUK ODOO 16.0
+
+INSTALL POSTGRESS 
+  BUAT USER 
+  BUAT DATABASE DENGAN USER YANG SAMA  
+  PENTING JANGAN PAKEK ROOT 
+
+INSTALL PYTHON 
+
+sudo apt install python3-dev libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev \
+    libtiff5-dev libjpeg8-dev libopenjp2-7-dev zlib1g-dev libfreetype6-dev \
+    liblcms2-dev libwebp-dev libharfbuzz-dev libfribidi-dev libxcb1-dev libpq-dev python3-pypdf2 python3-decorator python3-polib \
+    python3-html2text python3-docutils python3-libsass
+
+INSTALL PIP 
+
+INSTALL PIPENV DENGAN PIP 
+
+DOWNLOAD ODDO DARI GITHUB ZIP TERUS EXTRAK
+
+ketikan pipenv install didalam folder yang diextrak tadi
+
+remove baris/package di file PipFile
+ - Pypiwin32 
+
+masih di file yang sama ganti Pyopenssl version jadi 22.0.0
+
+ketikan pipenv install lagi sama 
+
+buat file run.conf
+
+[options]
+logfile=odoo.log
+admin_passwd=test
+xmlrpc_port=8070
+db_host=localhost
+db_maxconn=64
+db_user={user}
+db_password={password}
+db_name={db_name}
+db_port=5432
+addons_path=addons
+
+jalankan dengan python3 ./odoo-bin -i base - c run.conf
+
+lihat url di file odoo.log
